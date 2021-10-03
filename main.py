@@ -3,7 +3,7 @@ This is a python program that measure how much two texts are relevant
 """
 
 
-def remove_irrelevant(text):
+def del_stop_words(text):
     irr_words = ["a ", "an ", "the ", "is "]
     text.lower()
     for irr_word in irr_words:
@@ -12,7 +12,7 @@ def remove_irrelevant(text):
     return text
 
 
-def common_words(text):
+def get_top_six(text):
     sixth_common = {}
     for word in text:
         if word not in sixth_common:
@@ -30,7 +30,7 @@ def is_relevant(text1_list, text2_list):
 
 first_text = input("Enter the first text,please\n")
 second_text = input("Enter the second text,please\n")
-first_text = remove_irrelevant(first_text)
-second_text = remove_irrelevant(second_text)
+first_text = del_stop_words(first_text)
+second_text = del_stop_words(second_text)
 
 print(first_text, second_text, end="\n")
